@@ -32,7 +32,7 @@ That ruleset ships **enabled** in the manifest, so a cold browser start is block
 Not on the Web Store. Load it unpacked:
 
 ```
-chrome://extensions → Developer mode → Load unpacked
+chrome://extensions → Developer mode → Load unpacked → load this repository folder
 ```
 
 Install it into the profile you want locked down, not into all of them.
