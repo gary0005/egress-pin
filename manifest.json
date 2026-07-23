@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "egress-pin",
+  "version": "0.1.0",
+  "description": "Lets a browser profile reach the network only through a set proxy, and only while the external IP matches the expected one.",
+  "minimum_chrome_version": "120",
+  "permissions": [
+    "proxy",
+    "privacy",
+    "storage",
+    "alarms",
+    "declarativeNetRequest"
+  ],
+  "background": {
+    "service_worker": "sw.js",
+    "type": "module"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "IP Killswitch"
+  },
+  "options_page": "options.html",
+  "declarative_net_request": {
+    "rule_resources": [
+      {
+        "id": "block_all",
+        "enabled": true,
+        "path": "rules/block_all.json"
+      }
+    ]
+  }
+}

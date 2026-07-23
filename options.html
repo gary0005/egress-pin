@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>egress-pin settings</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="page">
+    <h1>egress-pin</h1>
+    <p class="lede">These settings apply to this browser profile only.</p>
+
+    <fieldset>
+      <legend>State</legend>
+      <label class="toggle">
+        <input type="checkbox" id="enabled">
+        <span>Killswitch on</span>
+      </label>
+      <p class="lede" style="margin:10px 0 0">
+        Turning it off removes the proxy configuration and unblocks traffic.
+        The profile will start reaching the network directly.
+      </p>
+    </fieldset>
+
+    <fieldset>
+      <legend>Layer 1 &mdash; proxy</legend>
+      <div class="row">
+        <label>
+          <span>Protocol</span>
+          <select id="proxyScheme">
+            <option value="socks5">socks5</option>
+            <option value="socks4">socks4</option>
+            <option value="http">http</option>
+            <option value="https">https</option>
+          </select>
+        </label>
+        <label>
+          <span>Host</span>
+          <input id="proxyHost" inputmode="url" placeholder="127.0.0.1">
+        </label>
+        <label>
+          <span>Port</span>
+          <input id="proxyPort" inputmode="numeric" placeholder="10808">
+        </label>
+      </div>
+      <label>
+        <span>Direct hosts</span>
+        <input id="bypassHosts" placeholder="localhost, 127.0.0.1">
+        <small>Comma-separated. Everything else is proxy-only, with no fallback.</small>
+      </label>
+    </fieldset>
+
+    <fieldset>
+      <legend>Layer 2 &mdash; IP check</legend>
+      <label>
+        <span>Expected exit IP</span>
+        <input id="expectedIp" inputmode="numeric" placeholder="203.0.113.10">
+      </label>
+      <label>
+        <span>Check endpoint</span>
+        <input id="checkUrl" inputmode="url" placeholder="https://ip.example.com/_ip">
+        <small>Must return the client IP as plain text, nothing else. Sample config in the README.</small>
+      </label>
+    </fieldset>
+
+    <div class="save">
+      <button id="save" type="button">Save changes</button>
+      <output id="saved" aria-live="polite"></output>
+    </div>
+  </main>
+
+  <script src="options.js" type="module"></script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="style.css">
+  <style>body { width: 300px; }</style>
+</head>
+<body>
+  <section class="signal" id="signal" data-status="">
+    <p class="signal-word" id="word">checking</p>
+    <p class="signal-reason" id="reason"></p>
+  </section>
+
+  <dl class="readout">
+    <dt>expected</dt><dd id="expected">-</dd>
+    <dt>seen</dt><dd id="actual">-</dd>
+    <dt>proxy</dt><dd id="proxy">-</dd>
+    <dt>checked</dt><dd id="at">-</dd>
+  </dl>
+
+  <div class="bar">
+    <button id="recheck" type="button">Check now</button>
+    <a class="linkish" id="options" href="#">Settings</a>
+  </div>
+
+  <script src="popup.js" type="module"></script>
+</body>
+</html>

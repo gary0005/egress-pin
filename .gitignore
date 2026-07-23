@@ -1,0 +1,10 @@
+# Packing artifacts. The .pem is the extension signing key — never commit it.
+*.pem
+*.crx
+*.zip
+
+# OS and editors
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
