@@ -1,3 +1,6 @@
+# Chrome writes compiled DNR rulesets here on load
+_metadata/
+
 # Packing artifacts. The .pem is the extension signing key — never commit it.
 *.pem
 *.crx
